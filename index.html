@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bubble Sort Algorithm</title>
+  </head>
+  <body>
+    <p>Sorted Array:</p>
+    <div id="displayArea">
+
+    </div>
+
+    <script>
+      var numbers = [12, 34, 1, 33, 3, 7, 9, -15, 88, 65, -1, -8];
+      function bubbleSort(numbers){
+        var switched;
+        do {
+          switched = false;
+          for(var i = 0; i < numbers.length; i++){
+            if(numbers[i] > numbers[i+1]){
+              var holding = numbers[i];
+              numbers[i] = numbers[i+1];
+              numbers[i+1] = holding;
+              switched = true;
+            }
+          }
+        } while (switched);
+      }
+      bubbleSort(numbers);
+      document.getElementById("displayArea").innerHTML = numbers;
+    </script>
+  </body>
+</html>
